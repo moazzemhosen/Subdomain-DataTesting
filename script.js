@@ -5,6 +5,15 @@ const cartBtn = document.querySelector('#cart-btn')
 const navbar = document.querySelector('.navbar')
 const menuBtn = document.querySelector('#menu-btn')
 
+   window.addEventListener('message', function (event) {
+     // Validate the origin to ensure it's coming from domain1.com
+     if (event.origin !== 'https://data-testing.vercel.app/') return;
+     // Access the sent data
+     const receivedData = event.data;
+     // Store the received data in localStorage on domain2.com
+     localStorage.setItem(receivedData.key, receivedData.value);
+     console.log(`Data received and stored in localStorage: ${receivedData.key} = ${receivedData.value}`);
+   });
 
 
 searchBtn.addEventListener('click', ()=>{
