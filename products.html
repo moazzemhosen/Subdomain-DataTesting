@@ -31,7 +31,7 @@
          }
          // Process and store the received data
          const data =JSON.parse(event.data);
-              console.log("data",data)
+              console.log("dataProduct",data.value)
               if(typeof data.value !== "undefined"){
                 localStorage.setItem(data.key, data.value);
          console.log(`Data received: ${data.key} = ${data.value}`);      
