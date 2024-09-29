@@ -26,12 +26,16 @@
        window.addEventListener('message', function (event) {
          // Ensure the message is from the trusted domain
               console.log("message")
-         if (event.origin !== 'https://data-testing.vercel.app') return;
+         if (event.origin !== 'https://data-testing.vercel.app'){
+                return;
+         }
          // Process and store the received data
-         const data = event.data;
-              console.log("data",event.data)
-         localStorage.setItem(data.key, data.value);
-         console.log(`Data received: ${data.key} = ${data.value}`);
+         const data =JSON.parse(event.data);
+              console.log("data",data)
+              if(typeof data.value !== "undefined"){
+                localStorage.setItem(data.key, data.value);
+         console.log(`Data received: ${data.key} = ${data.value}`);      
+              }
        });
      </script>
 
@@ -199,7 +203,7 @@
             <a href="#blog">blog</a>
         </div>
         <div class="credit">
-            creaated by <span>Nizami Sevindi</span> | all rights reserved!
+            creaated by <span>Moazzem</span> | all rights reserved!
         </div>
     </section>
     <!-- -------------------------------------------FOOTER SECTION -->
