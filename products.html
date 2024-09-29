@@ -24,8 +24,8 @@
             <script>
     window.addEventListener('message', (message) => {
            console.log("message.origin",message.origin)
-           console.log(message)
-            if (message.origin === 'https://data-testing.vercel.app/') {
+           console.log("message",message)
+            if (message.origin === 'https://data-testing.vercel.app') {
               const data = JSON.parse(message.data);
                    console.log("afterParse",data)
               const { userId } = data;
