@@ -28,6 +28,7 @@
             if (message.origin === 'https://data-testing.vercel.app/') {
               const data = JSON.parse(message.data);
               const { userId } = data;
+                   console.log(userId)
               if (userId){
                 localStorage.setItem('userId', userId);
               }
