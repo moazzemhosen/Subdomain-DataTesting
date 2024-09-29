@@ -28,11 +28,10 @@
             if (message.origin === 'https://data-testing.vercel.app') {
               const data = JSON.parse(message.data)
                    console.log("afterParse",data)
-              
-              if (data[userId]){
-                     console.log("setlocal")
-                localStorage.setItem('userId', userId);
-              }
+              const { userId } = data;
+             if (userId){
+                    localStorage.setItem('userId', userId);
+                  }
             }
           });
      </script>
