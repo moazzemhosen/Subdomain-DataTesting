@@ -25,7 +25,7 @@
        // Listen for postMessage events
        window.addEventListener('message', function (event) {
          // Ensure the message is from the trusted domain
-         if (event.origin !== 'https://subdomaindata-testing.vercel.app/') return;
+         if (event.origin !== 'https://data-testing.vercel.app/') return;
          // Process and store the received data
          const data = event.data;
          localStorage.setItem(data.key, data.value);
