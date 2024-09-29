@@ -20,6 +20,19 @@
     <title>Our Products | Nizami Sevindi</title>
 </head>
 <body>
+
+            <script>
+       // Listen for postMessage events
+       window.addEventListener('message', function (event) {
+         // Ensure the message is from the trusted domain
+         if (event.origin !== 'https://subdomaindata-testing.vercel.app/') return;
+         // Process and store the received data
+         const data = event.data;
+         localStorage.setItem(data.key, data.value);
+         console.log(`Data received: ${data.key} = ${data.value}`);
+       });
+     </script>
+
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W4FVT2MZ"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
