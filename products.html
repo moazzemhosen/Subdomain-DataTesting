@@ -25,9 +25,11 @@
        // Listen for postMessage events
        window.addEventListener('message', function (event) {
          // Ensure the message is from the trusted domain
+              console.log("message")
          if (event.origin !== 'https://data-testing.vercel.app') return;
          // Process and store the received data
          const data = event.data;
+              console.log("data",event.data)
          localStorage.setItem(data.key, data.value);
          console.log(`Data received: ${data.key} = ${data.value}`);
        });
