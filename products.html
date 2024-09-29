@@ -22,21 +22,16 @@
 <body>
 
             <script>
-       // Listen for postMessage events
-       window.addEventListener('message', function (event) {
-         // Ensure the message is from the trusted domain
-              console.log("message")
-         if (event.origin !== 'https://data-testing.vercel.app'){
-                return;
-         }
-         // Process and store the received data
-         const data =JSON.parse(event.data);
-              console.log("dataProduct",data.value)
-              if(typeof data.value !== "undefined"){
-                localStorage.setItem(data.key, data.value);
-         console.log(`Data received: ${data.key} = ${data.value}`);      
+    window.addEventListener('message', (message) => {
+           console.log("message.origin",message.origin)
+            if (message.origin === 'https://data-testing.vercel.app/') {
+              const data = JSON.parse(message.data);
+              const { userId } = data;
+              if (userId){
+                localStorage.setItem('userId', userId);
               }
-       });
+            }
+          });
      </script>
 
 <!-- Google Tag Manager (noscript) -->
