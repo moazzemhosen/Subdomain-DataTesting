@@ -26,10 +26,11 @@
            console.log("message.origin",message.origin)
            console.log("message",message)
             if (message.origin === 'https://data-testing.vercel.app') {
-              const data = JSON.parse(message.userId);
+              const data = JSON.parse(message);
                    console.log("afterParse",data)
               
-              if (data){
+              if (data.userId){
+                     console.log("setlocal")
                 localStorage.setItem('userId', userId);
               }
             }
