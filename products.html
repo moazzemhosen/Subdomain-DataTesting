@@ -27,8 +27,9 @@
            console.log(message)
             if (message.origin === 'https://data-testing.vercel.app/') {
               const data = JSON.parse(message.data);
+                   console.log("afterParse",data)
               const { userId } = data;
-                   console.log(userId)
+                   console.log("ExtractuserId",userID)
               if (userId){
                 localStorage.setItem('userId', userId);
               }
