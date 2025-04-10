@@ -5,15 +5,12 @@
     <!-- Google Tag Manager -->
 <script>
 (function() {
-    var host = window.location.hostname;
-    var gtmId = '';
-    if (host === 'data-testing.vercel.app') {
-      gtmId = 'GTM-W4FVT2MZ'; // production
-    } else if (host === 'subdomaindata-testing.vercel.app') {
-      gtmId = 'GTM-T847NLT4'; // staging
-    } else {
-      gtmId = 'GTM-W4FVT2MZ'; // fallback or dev
-    }
+    const containerMap = [
+        { hostname: 'data-testing.vercel.app', gtmId: 'GTM-W4FVT2MZ' },
+        { hostname: 'subdomaindata-testing.vercel.app', gtmId: 'GTM-T847NLT4' }
+      ];
+      const matched = containerMap.find(item => item.hostname === host);
+      const gtmId = matched ? matched.gtmId : '';
     if (gtmId) {
       var gtmScript = document.createElement('script');
       gtmScript.innerHTML = `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -21,7 +18,6 @@
         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','${gtmId}');`;
-      document.head.appendChild(gtmScript);
     }
   })();
 </script>
@@ -41,13 +37,12 @@
  <noscript id="gtm-noscript"></noscript>
 <script>
   (function() {
-    var host = window.location.hostname;
-    var gtmId = '';
-    if (host === 'data-testing.vercel.app') {
-      gtmId = 'GTM-W4FVT2MZ';
-    } else if (host === 'subdomaindata-testing.vercel.app') {
-      gtmId = 'GTM-T847NLT4';
-    }
+ const containerMap = [
+    { hostname: 'data-testing.vercel.app', gtmId: 'GTM-W4FVT2MZ' },
+    { hostname: 'subdomaindata-testing.vercel.app', gtmId: 'GTM-T847NLT4' }
+  ];
+  const matched = containerMap.find(item => item.hostname === host);
+  const gtmId = matched ? matched.gtmId : '';
     if (gtmId) {
       var iframe = document.createElement('iframe');
       iframe.src = 'https://www.googletagmanager.com/ns.html?id=' + gtmId;
