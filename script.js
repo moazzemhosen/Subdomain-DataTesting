@@ -9,7 +9,7 @@ const cookie = document.querySelector('#cookie')
 cookie.addEventListener('click', ()=>{
     console.log("RunO")
     function OptanonWrapper() { }
-    )
+})
 
 
 searchBtn.addEventListener('click', ()=>{
