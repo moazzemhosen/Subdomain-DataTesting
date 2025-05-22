@@ -17,6 +17,15 @@
     transition: .2s ease;
     outline: none;
 }
+#ot-sdk-btn.ot-sdk-show-settings{
+
+    background-color: none
+}
+
+#ot-sdk-btn.ot-sdk-show-settings :hover{
+
+    background-color: none
+}
 
 html{
     font-size: 62.5%;
