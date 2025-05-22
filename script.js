@@ -7,6 +7,7 @@ const menuBtn = document.querySelector('#menu-btn')
 const cookie = document.querySelector('#cookie')
 
 cookie.addEventListener('click', ()=>{
+    console.log("RunO")
     function OptanonWrapper() { }
     )
 
