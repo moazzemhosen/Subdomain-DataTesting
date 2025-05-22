@@ -19,12 +19,12 @@
 }
 #ot-sdk-btn.ot-sdk-show-settings{
 
-    background-color: none
+    background-color: white
 }
 
 #ot-sdk-btn.ot-sdk-show-settings :hover{
 
-    background-color: none
+    background-color: white
 }
 
 html{
