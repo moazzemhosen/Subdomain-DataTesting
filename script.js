@@ -4,7 +4,11 @@ const cartItem = document.querySelector('.cart-items-container')
 const cartBtn = document.querySelector('#cart-btn')
 const navbar = document.querySelector('.navbar')
 const menuBtn = document.querySelector('#menu-btn')
+const cookie = document.querySelector('#cookie')
 
+cookie.addEventListener('click', ()=>{
+    function OptanonWrapper() { }
+    )
 
 
 searchBtn.addEventListener('click', ()=>{
